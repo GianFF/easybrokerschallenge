@@ -8,7 +8,6 @@ const errorHandler = (error, req, res, next) => {
       message: error.message,
     });
   } else {
-    // TODO: handle other kind of errors
     next();
   }
 };

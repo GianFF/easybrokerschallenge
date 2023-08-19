@@ -9,9 +9,9 @@ class Interspersed extends SpeakMethod {
   do(phrase) {
     if (!phrase) return '';
 
-    return phrase.split(' ') // ['Lions', 'suck']
-      .map((word) => `${word} ${this.animalSound}`) // ['Lions grrr', 'suck grrr']
-      .join(' '); // 'Lions grrr' + ' ' + 'suck grrr'
+    return phrase.split(' ')
+      .map((word) => `${word} ${this.animalSound}`)
+      .join(' ');
   }
 }
 

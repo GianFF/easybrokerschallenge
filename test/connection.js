@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 
 let mongo = null;
  
@@ -26,16 +26,9 @@ const dropCollections = async () => {
     let collections = mongoose.connection.collections;
 
     for (const key in collections) {
-        // console.log('1. collection is: ',collection);
         const collection = collections[key];
         await collection.deleteMany();
     }
-
-    // collections = await mongoose.connection.db.collections();
-    // for (let collection of collections) {
-    //   console.log('2. collection is: ',collection);
-    //   await collection.remove();
-    // }
   }
 };
 

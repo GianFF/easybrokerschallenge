@@ -25,32 +25,3 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO_NAME }}:${{ github.sha }}
-
-  # TODO:
-  # deploy:
-  #   needs: ['build']
-  #   timeout-minutes: 10
-  #   runs-on: ubuntu-latest
-
-  #   # TODO: is this step needed?
-  #   # steps:
-  #   #   - name: Checkout repository
-  #   #     uses: actions/checkout@v3
-
-  #   - name: Install yq
-  #     run: sudo wget https://github.com/mikefarah/yq/releases/download/v4.7.0/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
-
-  #   - name: modify manifests
-  #     run: |
-  #       export NEW_BACKEND_IMAGE=$(yq e '.spec.template.spec.containers[0].image' manifests/backend/deployment.yaml | sed "s/:.*$/:${{ github.sha }}/")
-  #       yq e '.spec.template.spec.containers[0].image = env(NEW_BACKEND_IMAGE)' -i manifests/backend/deployment.yaml 
-
-
-  #   - name: push manifest updates
-  #     uses: EndBug/add-and-commit@v7
-  #     with:
-  #       author_name: GitHub Actions
-  #       branch: main
-  #       cwd: './manifests'
-  #       message: 'Bumps deployment images'
-  #       push: true
