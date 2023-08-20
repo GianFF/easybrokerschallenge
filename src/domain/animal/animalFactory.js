@@ -4,6 +4,9 @@ const { Silent } = require('../speakmethod/silent');
 const { Repeat } = require('../speakmethod/repeat');
 const speakMethodConstants = require('../speakmethod/speakMethodConstants');
 
+/**
+ * The animal factory is used to build Animal domain objects from an Animal from the DB.
+ */
 const animalFactory = {
   build({
     specie, animalSound, name, speakMethod,

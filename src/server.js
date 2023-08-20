@@ -12,6 +12,9 @@ function onAppCrash() {
   process.exit(1);
 }
 
+/**
+ * Once DB is connected server can start
+ */
 mongoose.connection.on('connected', () => {
   console.log('MongoDB connected');
 

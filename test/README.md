@@ -1,6 +1,6 @@
 # Testing 
 
-We follow the pattern Arrange-Act-Assert.
+We follow the pattern Arrange-Act-Assert and try to TDD everything.
 
 
 ### API tests
@@ -11,7 +11,7 @@ It checks the integration between all elements is working as expected.
 Services doing external requests will be supplied by their mock instances, thus that no request will be made to the outside application. 
 An in memory mongo DB will be used instead of the productive one.
 
-<img width="461" alt="Code Coverage" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/792ac257-458d-41a3-8dea-314296bdf180">
+<img width="610" alt="Code Coverage" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/909eb124-52fc-4d8d-a036-eba3392af135">
 
 
 ### Integration tests
@@ -22,9 +22,4 @@ It would be run on each commit by a Github Action using docker-compose to start 
 
 These are examples of Postman tests and the Github Action output:
 
-<img width="572" alt="Postman tests output" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/53a799e8-de83-4542-bb96-6c26456044be">
-
-
-<img width="534" alt="Linter" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/17adf935-e723-4ee5-8228-b448383860f7">
-
-<img width="1311" alt="Postman tests" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/c40ef72c-1c3b-4620-8be0-0e5b511f9fbc">
+<img width="530" alt="Postman tests output" src="https://github.com/GianFF/easybrokerschallenge/assets/11510367/6a2ebf68-0342-4fc1-893b-bc4062dbcc8e">

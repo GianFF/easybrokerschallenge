@@ -3,8 +3,12 @@ const { connectDB } = require('./database/connection');
 const { animalRepository } = require('./repositories/animal');
 const { animalService } = require('./services/animal');
 const loggerFactory = require('./logger');
-const { isTesting } = require('./environment');
 
+/**
+ * This is the application object, it holds the logic the
+ * application needs to run in each different environment
+ * and also all the needed objects for the app to run.
+ */
 const testApp = () => ({
   loggerFactory,
   animalRepository,
@@ -20,6 +24,6 @@ const prodApp = () => {
   };
 };
 
-const createApp = () => (isTesting() ? testApp() : prodApp());
+const createApp = () => (config.NODE_ENV === 'test' ? testApp() : prodApp());
 
 module.exports = { application: createApp() };

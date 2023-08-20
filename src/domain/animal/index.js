@@ -1,6 +1,7 @@
 /**
- * Represents the animals on the ZooJS.
- * They receive a specie and an animalSound to be created.
+ * Represents an animal in the ZooJS.
+ * Each animal can speak from a different manner,
+ * thus they need a speakMethod.
  */
 class Animal {
   constructor({ name, specie, speakMethod }) {
