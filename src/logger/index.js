@@ -1,5 +1,6 @@
 /**
- * Logger Factory, we could be using a library here but for the moment this is enough
+ * Logger Factory, builds a logger that prints logs with a transactionID to help tracing.
+ * We could be using a library here but for the moment console.log is enough.
  */
 module.exports = {
   newLogger: (transactionID) => ({

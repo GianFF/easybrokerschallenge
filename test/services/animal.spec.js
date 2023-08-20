@@ -4,15 +4,21 @@ const { animalService } = require('../../src/services/animal');
 const { application } = require('../../src/application');
 const { connectDB, dropDB, dropCollections } = require('../connection');
 const speakMethodConstants = require('../../src/domain/speakmethod/speakMethodConstants');
+const { restoreMocks } = require('../restoreMocks');
+
+// Mock console.log to do nothing:
+require('../loggerMock');
 
 describe('Animal Service', () => {
   let specie, animalSound, name, speakMethod;
+
   beforeAll(async () => {
     await connectDB();
   });
   
   afterAll(async () => {
     await dropDB();
+    restoreMocks();
   });
 
   beforeEach(async () => {

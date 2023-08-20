@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const HTTPError = require('../errors/httpError');
 const { animalFactory } = require('../domain/animal/animalFactory');
 
+/**
+ * AnimalService communicates repositories, domain and the API.
+ */
 const animalService = {
   async get({ animalRepository, logger, id }) {
     const animals = await animalRepository.findById(id);
