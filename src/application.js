@@ -1,40 +1,25 @@
 const config = require('./config');
 const { connectDB } = require('./database/connection');
-const { accountRepository } = require('./repositories/example');
+const { animalRepository } = require('./repositories/animal');
+const { animalService } = require('./services/animal');
 const loggerFactory = require('./logger');
-const { isTesting, isDevelopment } = require('./environment');
+const { isTesting } = require('./environment');
 
 const testApp = () => ({
   loggerFactory,
-  accountRepository,
+  animalRepository,
+  animalService,
 });
-
-const devApp = () => {
-  connectDB(config.DB_URL);
-
-  return {
-    loggerFactory,
-    accountRepository,
-  };
-};
 
 const prodApp = () => {
   connectDB(config.DB_URL);
-
   return {
     loggerFactory,
-    accountRepository,
+    animalRepository,
+    animalService,
   };
 };
 
-const createApp = () => {
-  if (isTesting()) {
-    return testApp();
-  }
-  if (isDevelopment()) {
-    return devApp();
-  }
-  return prodApp();
-};
+const createApp = () => (isTesting() ? testApp() : prodApp());
 
 module.exports = { application: createApp() };

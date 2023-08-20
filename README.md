@@ -37,7 +37,11 @@ Go to: [Testing REAMDE](https://github.com/GianFF/easybrokerschallenge-service/b
   - each commit on every branch runs tests, linter, and also integration_tests using POSTMAN and docker-compose in the Github Action VM.
   - main branch is be protected, restricting devs to merge a broken PR. Saving the CD workflow to build broken images.
 * Node JS with Express and vanilla Javascript to build the Client API.
+* Code structure separated in layers:
+  - API
+  - Services
+  - Repositories
+  - Domain
 * Unit testing with Jest.
 * Eslint to keep code consistency.
-* Docker Images repositories:
-  - [API](https://hub.docker.com/repository/docker/edymberg/easybrokerschallenge/general)
+* Code built as Docker Images, [API repository](https://hub.docker.com/repository/docker/edymberg/easybrokerschallenge/general)

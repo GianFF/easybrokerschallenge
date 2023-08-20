@@ -1,5 +1,8 @@
 # Testing 
 
+We follow the pattern Arrange-Act-Assert.
+
+
 ### API tests
 
 This suite is designed to integrate all elements in the application while hitting the API endpoints.

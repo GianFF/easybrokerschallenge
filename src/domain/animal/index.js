@@ -3,7 +3,8 @@
  * They receive a specie and an animalSound to be created.
  */
 class Animal {
-  constructor({ specie, speakMethod }) {
+  constructor({ name, specie, speakMethod }) {
+    this.name = name;
     this.specie = specie;
     this.speakMethod = speakMethod;
   }
